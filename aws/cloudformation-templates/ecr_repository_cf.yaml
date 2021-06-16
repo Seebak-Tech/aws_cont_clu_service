@@ -1,0 +1,9 @@
+Resources:
+  EcrRepository: 
+    Type: AWS::ECR::Repository
+    Properties: 
+      RepositoryName: !Join ['', [!Ref 'AWS::StackName', -repository]]
+
+Outputs:    
+  Arn:
+    Value: !GetAtt EcrRepository.Arn
